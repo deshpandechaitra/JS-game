@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <style>
+        .container{
+            width:500px;
+            height:500px;
+            position:relative;
+            border: 2px solid black;
+
+        }
+        .rectangle{
+            width:50px;
+            height:50px;
+            border-radius: 50%;
+            top:50px;
+            left:30px;
+            position: absolute;
+            /*border: 2px solid red;*/
+            background-image: url("football/ball.jpg");
+            background-size: cover;
+        }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="rectangle"></div>
+            </div>
+            <script>
+                window.onload=function(){
+                    let rectangle=document.querySelector(".rectangle");
+                   // setInterval(function(){
+                      // let top=window.getComputedStyle(rectangle,null);
+                       // let top=rectangle.style.top;
+                       // console.log(typeof style.top);
+                         setInterval(function(){
+                            let top=window.getComputedStyle(rectangle,null).top;
+                            newTop=parseInt(top)+5;
+                            rectangle.style.top=newTop+"px";
+
+                    },500);
+                }
+            </script>
+    </body>
+</html>
